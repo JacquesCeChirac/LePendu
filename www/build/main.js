@@ -200,52 +200,6 @@ var MemoryProvider = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HangmanPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the HangmanPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var HangmanPage = (function () {
-    function HangmanPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.tagList = [];
-    }
-    HangmanPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad HangmanPage');
-    };
-    HangmanPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-hangman',template:/*ion-inline-start:"/Users/math1761/Sites/IESA--Ionic3/src/pages/hangman/hangman.html"*/'<!--\n  Generated template for the HangmanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Pendu</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-item>\n        <ion-input placeholder="Rentrez un mot"></ion-input>\n    </ion-item>\n    <button ion-button>Valider</button>\n\n    <div class="hangmanContainer">\n        \n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/IESA--Ionic3/src/pages/hangman/hangman.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], HangmanPage);
-    return HangmanPage;
-}());
-
-//# sourceMappingURL=hangman.js.map
-
-/***/ }),
-
-/***/ 224:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InvitationsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
@@ -301,6 +255,69 @@ var InvitationsPage = (function () {
 }());
 
 //# sourceMappingURL=invitations.js.map
+
+/***/ }),
+
+/***/ 224:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HangmanPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the HangmanPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HangmanPage = (function () {
+    function HangmanPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.step = '';
+        this.count = 0;
+        this.word = "tata";
+        this.tiret = ['_'];
+    }
+    HangmanPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad HangmanPage');
+    };
+    HangmanPage.prototype.addStep = function () {
+        if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
+            for (var i = 0; i < this.word.length; i++) {
+                if (this.step == this.word[i]) {
+                    this.tiret[i].push(this.word[i]);
+                }
+            }
+            console.log(this.tiret);
+        }
+        else {
+            this.count++;
+        }
+    };
+    HangmanPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-hangman',template:/*ion-inline-start:"/Users/math1761/Sites/IESA--Ionic3/src/pages/hangman/hangman.html"*/'<!--\n  Generated template for the HangmanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Pendu</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <form (ngSubmit)="addStep()">\n        <ion-item>\n            <ion-label>Lettre</ion-label>\n            <ion-input type="text" [(ngModel)]="step" name="step" maxlength="1"></ion-input>\n        </ion-item>\n        <button ion-button type="submit" block>Valider</button>\n    </form>\n\n    <div class="hangmanContainer">\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/IESA--Ionic3/src/pages/hangman/hangman.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object])
+    ], HangmanPage);
+    return HangmanPage;
+    var _a, _b;
+}());
+
+//# sourceMappingURL=hangman.js.map
 
 /***/ }),
 
@@ -735,7 +752,7 @@ var SearchTictactoePlayersPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_provider__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_models__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__invitations_invitations__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__invitations_invitations__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_tictactoe_players_search_tictactoe_players__ = __webpack_require__(227);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1122,11 +1139,11 @@ webpackEmptyAsyncContext.id = 239;
 
 var map = {
 	"../pages/hangman/hangman.module": [
-		696,
+		697,
 		5
 	],
 	"../pages/invitations/invitations.module": [
-		697,
+		696,
 		4
 	],
 	"../pages/memory-create/memory-create.module": [
@@ -1288,7 +1305,7 @@ var MEMORY_SIZE = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(403);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tictactoe_tictactoe__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__memory_memory__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hangman_hangman__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hangman_hangman__ = __webpack_require__(224);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1639,7 +1656,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tabs_tabs__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_home_home__ = __webpack_require__(403);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tictactoe_tictactoe__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_invitations_invitations__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_invitations_invitations__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_search_tictactoe_players_search_tictactoe_players__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_memory_memory__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_memory_create_memory_create__ = __webpack_require__(225);
@@ -1650,7 +1667,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_camera_provider__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__models_models__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_memory_provider__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_hangman_hangman__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_hangman_hangman__ = __webpack_require__(224);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1709,8 +1726,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/hangman/hangman.module#HangmanPageModule', name: 'HangmanPage', segment: 'hangman', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invitations/invitations.module#InvitationsPageModule', name: 'InvitationsPage', segment: 'invitations', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/hangman/hangman.module#HangmanPageModule', name: 'HangmanPage', segment: 'hangman', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/memory-create/memory-create.module#MemoryCreatePageModule', name: 'MemoryCreatePage', segment: 'memory-create', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/memory/memory.module#MemoryPageModule', name: 'MemoryPage', segment: 'memory', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/search-tictactoe-players/search-tictactoe-players.module#SearchTictactoePlayersPageModule', name: 'SearchTictactoePlayersPage', segment: 'search-tictactoe-players', priority: 'low', defaultHistory: [] },

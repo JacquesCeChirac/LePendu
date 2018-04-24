@@ -14,12 +14,16 @@
 
 
 <ion-content padding>
-    <ion-item>
-        <ion-input placeholder="Rentrez un mot"></ion-input>
-    </ion-item>
-    <button ion-button>Valider</button>
+
+    <form (ngSubmit)="addStep()">
+        <ion-item>
+            <ion-label>Lettre</ion-label>
+            <ion-input type="text" [(ngModel)]="step" name="step" maxlength="1"></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Valider</button>
+    </form>
 
     <div class="hangmanContainer">
-        
     </div>
+
 </ion-content>

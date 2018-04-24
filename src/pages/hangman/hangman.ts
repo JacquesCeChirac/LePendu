@@ -15,7 +15,10 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 })
 export class HangmanPage {
 
-    public tagList: any[] = [];
+    step =  '';
+    count =  0;
+    word =  "tata";
+    tiret = ['_'];
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
@@ -24,8 +27,18 @@ export class HangmanPage {
         console.log('ionViewDidLoad HangmanPage');
     }
 
-    isTyping() {
-        console.log('typing')
+    public addStep(): void {
+        if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
+           for (let i = 0; i < this.word.length; i++) {
+               if (this.step == this.word[i]) {
+                   this.tiret[i].push(this.word[i])
+               }
+           }
+
+            console.log(this.tiret)
+        } else {
+            this.count++;
+        }
     }
 
 }
