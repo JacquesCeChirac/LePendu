@@ -17,7 +17,7 @@ export class HangmanPage {
 
     step =  '';
     count =  0;
-    word =  "tata";
+    word =  "tatatiti";
     try = [];
     wordArray = this.word.split('');
 
@@ -33,17 +33,19 @@ export class HangmanPage {
         if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
            for (let i = 0; i < this.word.length; i++) {
                if (this.step == this.word[i]) {
-                   if (this.word[i]!=this.try[i]){
-                       this.try[i] =this.step;
+                   if (this.word[i]!==this.try[i]){
+                       this.try[i]=this.step;
                    }
                } else if (this.word[i]!=this.try[i]) {
                        this.try[i]='-';
-                   this.count++;
                }
            }
+            this.count++;
            console.log(this.try);
         } else {
-            this.count++;
+        }
+        if(!this.try.includes('-',0)){
+            console.log("fini !");
         }
     }
 

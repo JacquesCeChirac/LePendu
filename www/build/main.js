@@ -226,7 +226,7 @@ var HangmanPage = (function () {
         this.navParams = navParams;
         this.step = '';
         this.count = 0;
-        this.word = "tata";
+        this.word = "tatatiti";
         this.try = [];
         this.wordArray = this.word.split('');
     }
@@ -238,19 +238,21 @@ var HangmanPage = (function () {
         if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
             for (var i = 0; i < this.word.length; i++) {
                 if (this.step == this.word[i]) {
-                    if (this.word[i] != this.try[i]) {
+                    if (this.word[i] !== this.try[i]) {
                         this.try[i] = this.step;
                     }
                 }
                 else if (this.word[i] != this.try[i]) {
                     this.try[i] = '-';
-                    this.count++;
                 }
             }
+            this.count++;
             console.log(this.try);
         }
         else {
-            this.count++;
+        }
+        if (!this.try.includes('-', 0)) {
+            console.log("fini !");
         }
     };
     HangmanPage = __decorate([
