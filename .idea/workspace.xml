@@ -3,14 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="50766ebb-2dc8-4c38-b824-ec55a42bc081" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.sourcemaps/main.js.map" afterPath="$PROJECT_DIR$/.sourcemaps/main.js.map" />
-      <change beforePath="$PROJECT_DIR$/src/pages/hangman/hangman.html" afterPath="$PROJECT_DIR$/src/pages/hangman/hangman.html" />
       <change beforePath="$PROJECT_DIR$/src/pages/hangman/hangman.ts" afterPath="$PROJECT_DIR$/src/pages/hangman/hangman.ts" />
-      <change beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="$PROJECT_DIR$/www/build/4.js" />
-      <change beforePath="$PROJECT_DIR$/www/build/5.js" afterPath="$PROJECT_DIR$/www/build/5.js" />
-      <change beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="$PROJECT_DIR$/www/build/main.js" />
-      <change beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="$PROJECT_DIR$/www/build/main.js.map" />
-      <change beforePath="$PROJECT_DIR$/www/build/vendor.js.map" afterPath="$PROJECT_DIR$/www/build/vendor.js.map" />
+      <change beforePath="$PROJECT_DIR$/www/build/0.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/0.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/1.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/2.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/2.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/3.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/3.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/4.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/4.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/5.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/5.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/main.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/main.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/main.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/main.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/vendor.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/build/vendor.js.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +39,8 @@
       <file leaf-file-name="hangman.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/hangman/hangman.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="227">
+              <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -183,12 +195,12 @@
       <option name="presentableId" value="Default" />
       <updated>1524561448602</updated>
       <workItem from="1524561452934" duration="2436000" />
-      <workItem from="1524568085539" duration="7058000" />
+      <workItem from="1524568085539" duration="7493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9494000" />
+    <option name="totallyTimeSpent" value="9929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1280" height="728" extended-state="6" />
@@ -472,8 +484,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/hangman/hangman.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="227">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

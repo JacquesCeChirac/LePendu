@@ -18,7 +18,7 @@ export class HangmanPage {
     step =  '';
     count =  0;
     word =  "tata";
-    tiret = ['_'];
+    tiret: ['_'];
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
