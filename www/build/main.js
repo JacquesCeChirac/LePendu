@@ -227,17 +227,27 @@ var HangmanPage = (function () {
         this.step = '';
         this.count = 0;
         this.word = "tata";
+        this.try = [];
+        this.wordArray = this.word.split('');
     }
     HangmanPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad HangmanPage');
     };
     HangmanPage.prototype.addStep = function () {
+        this.step = this.step.toLowerCase();
         if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
             for (var i = 0; i < this.word.length; i++) {
                 if (this.step == this.word[i]) {
-                    console.log(this.step + "/" + this.word);
+                    if (this.word[i] != this.try[i]) {
+                        this.try[i] = this.step;
+                    }
+                }
+                else if (this.word[i] != this.try[i]) {
+                    this.try[i] = '-';
+                    this.count++;
                 }
             }
+            console.log(this.try);
         }
         else {
             this.count++;

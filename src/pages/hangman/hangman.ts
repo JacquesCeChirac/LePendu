@@ -18,7 +18,8 @@ export class HangmanPage {
     step =  '';
     count =  0;
     word =  "tata";
-    tiret: [''];
+    try = [];
+    wordArray = this.word.split('');
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
@@ -28,12 +29,19 @@ export class HangmanPage {
     }
 
     public addStep(): void {
+        this.step = this.step.toLowerCase();
         if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
            for (let i = 0; i < this.word.length; i++) {
                if (this.step == this.word[i]) {
-                   console.log(this.step+"/"+this.word);
+                   if (this.word[i]!=this.try[i]){
+                       this.try[i] =this.step;
+                   }
+               } else if (this.word[i]!=this.try[i]) {
+                       this.try[i]='-';
+                   this.count++;
                }
            }
+           console.log(this.try);
         } else {
             this.count++;
         }
