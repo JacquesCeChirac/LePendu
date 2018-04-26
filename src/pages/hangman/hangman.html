@@ -21,10 +21,17 @@
             <ion-input type="text" [(ngModel)]="step" name="step" maxlength="1"></ion-input>
         </ion-item>
         <button ion-button type="submit" block>Valider</button>
+        {{err}}
+        {{letters}}
+        {{try}}
     </form>
 
     <div class="hangmanContainer">
-        <img src="../../assets/hangman/hung{{err}}.png" />
+        <img src="../../assets/hangman/hung{{err}}.png" style="max-height:185px;"/>
     </div>
-
+    <div>
+      {{err}}
+      {{letters}}
+      {{try}}
+    </div>
 </ion-content>

@@ -250,7 +250,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var HangmanPage = (function () {
-    //numberKey = Math.round(Math.random()*)
     function HangmanPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -260,6 +259,7 @@ var HangmanPage = (function () {
         this.try = [];
         this.letters = [];
         this.err = 0;
+        this.goodPass = false;
     }
     HangmanPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad HangmanPage');
@@ -269,20 +269,26 @@ var HangmanPage = (function () {
     // griser valider +11
     HangmanPage.prototype.addStep = function () {
         this.step = this.step.toLowerCase();
-        if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
+        if (this.step.match(/[a-zA-Z]/) && this.err < 11) {
             for (var i = 0; i < this.word.length; i++) {
                 if (this.step == this.word[i]) {
+                    this.goodPass = true;
                     if (this.word[i] !== this.try[i]) {
                         this.try[i] = this.step;
                     }
                 }
                 else if (this.word[i] != this.try[i]) {
                     this.try[i] = '-';
-                    this.letters.push(this.step);
                 }
             }
+            if (!this.goodPass) {
+                this.err++;
+                this.letters.push(this.step);
+            }
+            else {
+                this.goodPass = false;
+            }
             this.count++;
-            this.err++;
             console.log(this.try);
             console.log(this.letters);
         }
@@ -293,7 +299,7 @@ var HangmanPage = (function () {
     };
     HangmanPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-hangman',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/hangman/hangman.html"*/'<!--\n  Generated template for the HangmanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Pendu</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <form (ngSubmit)="addStep()">\n        <ion-item>\n            <ion-label>Lettre</ion-label>\n            <ion-input type="text" [(ngModel)]="step" name="step" maxlength="1"></ion-input>\n        </ion-item>\n        <button ion-button type="submit" block>Valider</button>\n    </form>\n\n    <div class="hangmanContainer">\n        <img src="../../assets/hangman/hung{{err}}.png" />\n    </div>\n\n</ion-content>'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/hangman/hangman.html"*/,
+            selector: 'page-hangman',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/hangman/hangman.html"*/'<!--\n  Generated template for the HangmanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Pendu</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <form (ngSubmit)="addStep()">\n        <ion-item>\n            <ion-label>Lettre</ion-label>\n            <ion-input type="text" [(ngModel)]="step" name="step" maxlength="1"></ion-input>\n        </ion-item>\n        <button ion-button type="submit" block>Valider</button>\n        {{err}}\n        {{letters}}\n        {{try}}\n    </form>\n\n    <div class="hangmanContainer">\n        <img src="../../assets/hangman/hung{{err}}.png" style="max-height:185px;"/>\n    </div>\n    <div>\n      {{err}}\n      {{letters}}\n      {{try}}\n    </div>\n</ion-content>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/hangman/hangman.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], HangmanPage);

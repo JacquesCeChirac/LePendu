@@ -22,7 +22,7 @@ export class HangmanPage {
     try = [];
     letters = [];
     err = 0;
-    //numberKey = Math.round(Math.random()*)
+    goodPass = false;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
@@ -35,19 +35,25 @@ export class HangmanPage {
     // griser valider +11
     public addStep(): void {
         this.step = this.step.toLowerCase();
-        if (this.step.match(/[a-zA-Z]/) && this.count < 11) {
+        if (this.step.match(/[a-zA-Z]/) && this.err < 11) {
            for (let i = 0; i < this.word.length; i++) {
                if (this.step == this.word[i]) {
+                 this.goodPass = true;
                    if (this.word[i]!==this.try[i]){
                        this.try[i]=this.step;
                    }
                } else if (this.word[i]!=this.try[i]) {
-                       this.try[i]='-';
-                       this.letters.push(this.step);
+                 this.try[i]='-';
                }
            }
-            this.count++;
-            this.err++;
+           if(!this.goodPass){
+             this.err++;
+             this.letters.push(this.step);
+           } else {
+             this.goodPass = false;
+           }
+
+           this.count++;
            console.log(this.try);
            console.log(this.letters);
         } else {
