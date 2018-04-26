@@ -27,13 +27,13 @@ var DICTIONARY = [{ "key": "abaisse" }, { "key": "abaissement" }, { "key": "abai
 
 /***/ }),
 
-/***/ 179:
+/***/ 187:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemoryProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_models__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_models__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__globals__ = __webpack_require__(162);
 /*
 import { AlertProvider } from './alert.provider';
@@ -292,14 +292,15 @@ var HangmanPage = (function () {
             console.log(this.try);
             console.log(this.letters);
         }
-        else {
+        else if (this.err === 11) {
             console.log("fini !");
             console.log(this.word);
         }
+        this.step = '';
     };
     HangmanPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-hangman',template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/hangman/hangman.html"*/'<!--\n  Generated template for the HangmanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Pendu</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <form (ngSubmit)="addStep()">\n        <ion-item>\n            <ion-label>Lettre</ion-label>\n            <ion-input type="text" [(ngModel)]="step" name="step" maxlength="1"></ion-input>\n        </ion-item>\n        <button ion-button type="submit" block>Valider</button>\n    </form>\n\n    <div class="hangmanContainer">\n        <img src="../../assets/hangman/hung{{err}}.png" style="max-height:185px;"/>\n    </div>\n    <div class="test">\n        <span *ngFor="let letter of letters">{{letter}}</span>\n        <span>{{err}}</span>\n        <span>{{try}}</span>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/hangman/hangman.html"*/,
+            selector: 'page-hangman',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/hangman/hangman.html"*/'<!--\n  Generated template for the HangmanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Pendu</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n    <form (ngSubmit)="addStep()">\n        <ion-item>\n            <ion-label>Lettre</ion-label>\n            <ion-input type="text" [(ngModel)]="step" name="step" maxlength="1"></ion-input>\n        </ion-item>\n        <button ion-button type="submit" block>Valider</button>\n    </form>\n\n    <div class="hangmanContainer">\n        <img src="../../assets/hangman/hung{{err}}.png" style="max-height:185px;"/>\n    </div>\n    <div class="test">\n      Nombres d\'erreurs : <span>{{err}}</span><br>\n      Nombres d\'essais : <span>{{count}}</span><br>\n      Lettres tentées : <span *ngFor="let letter of letters">{{letter}}, </span><br>\n      Mot : <span *ngFor="let tr of try">{{tr}}</span>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/hangman/hangman.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object])
     ], HangmanPage);
@@ -359,7 +360,7 @@ var InvitationsPage = (function () {
     };
     InvitationsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-invitations',template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/invitations/invitations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>Invitations</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="goBack()">\n        X\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row *ngFor="let invitation of invitations">\n      <ion-col>\n        Pseudo : {{ invitation.sender.alias}}\n      </ion-col>\n      <ion-col>\n        <button class="button block" (click)="accept(invitation)">Accepter</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/invitations/invitations.html"*/,
+            selector: 'page-invitations',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/invitations/invitations.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>Invitations</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="goBack()">\n        X\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row *ngFor="let invitation of invitations">\n      <ion-col>\n        Pseudo : {{ invitation.sender.alias}}\n      </ion-col>\n      <ion-col>\n        <button class="button block" (click)="accept(invitation)">Accepter</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/invitations/invitations.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -377,13 +378,168 @@ var InvitationsPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemoryCreatePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_camera_provider__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_provider__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_memory_provider__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_models__ = __webpack_require__(72);
+/* import { ViewCache } from '@firebase/database/dist/esm/src/core/view/ViewCache'; */
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var MemoryCreatePage = (function () {
+    /*@ViewChild(Content) content: Content*/
+    function MemoryCreatePage(navCtrl, navParams, memoryProvider, camera, actionSheetCtrl, alert, models, user, events, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.memoryProvider = memoryProvider;
+        this.camera = camera;
+        this.actionSheetCtrl = actionSheetCtrl;
+        this.alert = alert;
+        this.models = models;
+        this.user = user;
+        this.events = events;
+        this.viewCtrl = viewCtrl;
+        this.cards = this.initCards();
+        this.cardsToSend = this.memoryProvider.initCardsToSend();
+        this.canUploadPackage = true;
+    }
+    MemoryCreatePage.prototype.initCards = function () {
+        return this.memoryProvider.initCards();
+    };
+    MemoryCreatePage.prototype.ionViewDidLoad = function () {
+        /*this.events.subscribe("loadingStatus" ,i => {
+          this.loadingStatus = (i * 5 / 100) + "/100"
+        })*/
+        this.viewCtrl.setBackButtonText('');
+    };
+    MemoryCreatePage.prototype.addCard = function (cardIndex, rowIndex) {
+        this.presentActionSheet(cardIndex, rowIndex);
+    };
+    MemoryCreatePage.prototype.presentActionSheet = function (cardIndex, rowIndex) {
+        var _this = this;
+        var actionSheet = this.actionSheetCtrl.create({
+            title: 'Ajouter une "memoryCard"',
+            buttons: [
+                {
+                    text: 'Nouvelle image',
+                    handler: function () {
+                        _this.models.presentLoadingDefault();
+                        _this.camera.getPicture(1, false, false).then(function (img) {
+                            _this.handleImg(img, cardIndex, rowIndex);
+                        });
+                    },
+                }, {
+                    text: 'Depuis la bibliothèque',
+                    handler: function () {
+                        _this.models.presentLoadingDefault();
+                        _this.camera.getPicture(0, false, false).then(function (img) {
+                            _this.handleImg(img, cardIndex, rowIndex);
+                        });
+                    },
+                }, {
+                    text: 'Annuler',
+                    role: 'Annuler',
+                }
+            ]
+        });
+        actionSheet.present();
+    };
+    MemoryCreatePage.prototype.handleImg = function (img_, cardIndex, rowIndex) {
+        var img = {};
+        img = img_; // on récupère l'image au format blob
+        this.cards[rowIndex][cardIndex - (4 * rowIndex)].src = img;
+        // exemple : si la carte a pour index 7, sachant que les lignes font 4 éléments, 
+        // la carte sera située à l'index ('la ligne') 1 du tableau this.cards, à l'index 3 de ce deuxième tableau de this.cards
+        // pour déduire index = 3, on lui retire autant de lignes ('de paquets') de 4 cartes précédentes 
+        this.cardsToSend[cardIndex] = this.cards[rowIndex][cardIndex - (4 * rowIndex)];
+        // on update le tableau final d'images, numérotées de 0 à 19
+        this.camera.readURL(img, '#img' + cardIndex);
+        //on attribut l'image à la souce de l'élément html ayant pour id "img7" (si cette carte a pour index 7 bien sûr :b)
+    };
+    MemoryCreatePage.prototype.addCards = function () {
+        if (this.isReadyToSend()) {
+            this.models.presentLoadingDefault();
+            this.memoryProvider.uploadNewPackage(this.cardsToSend, this.user.id);
+            this.canUploadPackage = false;
+        }
+        else {
+            var title = void 0, message = void 0;
+            if (this.canUploadPackage) {
+                title = "Jeu de cartes incomplet",
+                    message = "Vous devez ajouter 20 images pour constituer un jeu et pouvoir le poster.";
+            }
+            else {
+                title = "Jeu de carte déjà créé",
+                    message = "Vous devez quitter cette page avant de pouvoir poster un nouveau jeu.";
+            }
+            this.alert.presentAlert(title, message, "Ah d'accord !");
+        }
+    };
+    MemoryCreatePage.prototype.isReadyToSend = function () {
+        if (this.canUploadPackage) {
+            for (var _i = 0, _a = this.cardsToSend; _i < _a.length; _i++) {
+                var card = _a[_i];
+                if (!card.src) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    MemoryCreatePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-memory-create',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/memory-create/memory-create.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Ajouter un paquet de carte</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="card-background-page" padding>\n  \n  <ion-grid>   \n    <ion-row *ngFor="let card_row of cards">\n      <ion-col class="col-img" *ngFor="let card of card_row">\n        <div class="col-img-background">\n            Ajouter image\n            <img *ngIf="card.src"  class="img" id="img{{card.index}}" src="{{ card.src }}" alt="no card"/>\n            <button class="col-img-btn" (click)="addCard(card.index, cards.indexOf(card_row))"></button>\n        </div>  \n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <button id="btn-addCards" ion-button block (click)="addCards()">Ajouter paquet</button>\n</ion-content>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/memory-create/memory-create.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_memory_provider__["a" /* MemoryProvider */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_camera_provider__["a" /* CameraProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_alert_provider__["a" /* AlertProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__models_models__["a" /* Models */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_user__["a" /* User */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
+    ], MemoryCreatePage);
+    return MemoryCreatePage;
+}());
+
+//# sourceMappingURL=memory-create.js.map
+
+/***/ }),
+
+/***/ 227:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_alert_provider__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_memory_provider__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__memory_create_memory_create__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_alert_provider__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_memory_provider__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__memory_create_memory_create__ = __webpack_require__(226);
 /*import { Models } from '../../models/models'*/
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -514,7 +670,7 @@ var MemoryPage = (function () {
     };
     MemoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-memory',template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/memory/memory.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Memory</ion-title>\n    \n    <ion-buttons end>\n      <button ion-button icon-only (click)="presentActionSheet()">\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n    \n    <ion-grid *ngIf="cards.length < 10">   \n      <ion-row *ngFor="let card_row of emptyCards">\n        <ion-col class="col-img" *ngFor="let card of card_row">\n          <div class="col-img-background">\n              ?\n          </div>   \n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <div id="test-memoryCards-ctnr">\n      <div *ngFor="let card of cards" class="test-card">\n        <img *ngIf="card.isVisible" class="test-img" src="{{ card.src }}" alt="none"/>\n        <div *ngIf="!card.isVisible" class="img-not-visible">\n            {{ card.index }}\n        </div>\n        <button *ngIf="card.src" id="{{ card.index }}" class="col-img-btn" (click)="clickCard(card)"></button>\n      </div>\n    </div>\n\n    <p *ngIf="cards.length > 10">\n      Cartes gagnées: {{ cardsWon }}/20    |     Essais restants: {{ attemptsLeft }}\n    </p>\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/memory/memory.html"*/,
+            selector: 'page-memory',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/memory/memory.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Memory</ion-title>\n    \n    <ion-buttons end>\n      <button ion-button icon-only (click)="presentActionSheet()">\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n    \n    <ion-grid *ngIf="cards.length < 10">   \n      <ion-row *ngFor="let card_row of emptyCards">\n        <ion-col class="col-img" *ngFor="let card of card_row">\n          <div class="col-img-background">\n              ?\n          </div>   \n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <div id="test-memoryCards-ctnr">\n      <div *ngFor="let card of cards" class="test-card">\n        <img *ngIf="card.isVisible" class="test-img" src="{{ card.src }}" alt="none"/>\n        <div *ngIf="!card.isVisible" class="img-not-visible">\n            {{ card.index }}\n        </div>\n        <button *ngIf="card.src" id="{{ card.index }}" class="col-img-btn" (click)="clickCard(card)"></button>\n      </div>\n    </div>\n\n    <p *ngIf="cards.length > 10">\n      Cartes gagnées: {{ cardsWon }}/20    |     Essais restants: {{ attemptsLeft }}\n    </p>\n</ion-content>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/memory/memory.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -530,161 +686,6 @@ var MemoryPage = (function () {
 
 /***/ }),
 
-/***/ 227:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemoryCreatePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_camera_provider__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_provider__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_memory_provider__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_models__ = __webpack_require__(73);
-/* import { ViewCache } from '@firebase/database/dist/esm/src/core/view/ViewCache'; */
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-var MemoryCreatePage = (function () {
-    /*@ViewChild(Content) content: Content*/
-    function MemoryCreatePage(navCtrl, navParams, memoryProvider, camera, actionSheetCtrl, alert, models, user, events, viewCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.memoryProvider = memoryProvider;
-        this.camera = camera;
-        this.actionSheetCtrl = actionSheetCtrl;
-        this.alert = alert;
-        this.models = models;
-        this.user = user;
-        this.events = events;
-        this.viewCtrl = viewCtrl;
-        this.cards = this.initCards();
-        this.cardsToSend = this.memoryProvider.initCardsToSend();
-        this.canUploadPackage = true;
-    }
-    MemoryCreatePage.prototype.initCards = function () {
-        return this.memoryProvider.initCards();
-    };
-    MemoryCreatePage.prototype.ionViewDidLoad = function () {
-        /*this.events.subscribe("loadingStatus" ,i => {
-          this.loadingStatus = (i * 5 / 100) + "/100"
-        })*/
-        this.viewCtrl.setBackButtonText('');
-    };
-    MemoryCreatePage.prototype.addCard = function (cardIndex, rowIndex) {
-        this.presentActionSheet(cardIndex, rowIndex);
-    };
-    MemoryCreatePage.prototype.presentActionSheet = function (cardIndex, rowIndex) {
-        var _this = this;
-        var actionSheet = this.actionSheetCtrl.create({
-            title: 'Ajouter une "memoryCard"',
-            buttons: [
-                {
-                    text: 'Nouvelle image',
-                    handler: function () {
-                        _this.models.presentLoadingDefault();
-                        _this.camera.getPicture(1, false, false).then(function (img) {
-                            _this.handleImg(img, cardIndex, rowIndex);
-                        });
-                    },
-                }, {
-                    text: 'Depuis la bibliothèque',
-                    handler: function () {
-                        _this.models.presentLoadingDefault();
-                        _this.camera.getPicture(0, false, false).then(function (img) {
-                            _this.handleImg(img, cardIndex, rowIndex);
-                        });
-                    },
-                }, {
-                    text: 'Annuler',
-                    role: 'Annuler',
-                }
-            ]
-        });
-        actionSheet.present();
-    };
-    MemoryCreatePage.prototype.handleImg = function (img_, cardIndex, rowIndex) {
-        var img = {};
-        img = img_; // on récupère l'image au format blob
-        this.cards[rowIndex][cardIndex - (4 * rowIndex)].src = img;
-        // exemple : si la carte a pour index 7, sachant que les lignes font 4 éléments, 
-        // la carte sera située à l'index ('la ligne') 1 du tableau this.cards, à l'index 3 de ce deuxième tableau de this.cards
-        // pour déduire index = 3, on lui retire autant de lignes ('de paquets') de 4 cartes précédentes 
-        this.cardsToSend[cardIndex] = this.cards[rowIndex][cardIndex - (4 * rowIndex)];
-        // on update le tableau final d'images, numérotées de 0 à 19
-        this.camera.readURL(img, '#img' + cardIndex);
-        //on attribut l'image à la souce de l'élément html ayant pour id "img7" (si cette carte a pour index 7 bien sûr :b)
-    };
-    MemoryCreatePage.prototype.addCards = function () {
-        if (this.isReadyToSend()) {
-            this.models.presentLoadingDefault();
-            this.memoryProvider.uploadNewPackage(this.cardsToSend, this.user.id);
-            this.canUploadPackage = false;
-        }
-        else {
-            var title = void 0, message = void 0;
-            if (this.canUploadPackage) {
-                title = "Jeu de cartes incomplet",
-                    message = "Vous devez ajouter 20 images pour constituer un jeu et pouvoir le poster.";
-            }
-            else {
-                title = "Jeu de carte déjà créé",
-                    message = "Vous devez quitter cette page avant de pouvoir poster un nouveau jeu.";
-            }
-            this.alert.presentAlert(title, message, "Ah d'accord !");
-        }
-    };
-    MemoryCreatePage.prototype.isReadyToSend = function () {
-        if (this.canUploadPackage) {
-            for (var _i = 0, _a = this.cardsToSend; _i < _a.length; _i++) {
-                var card = _a[_i];
-                if (!card.src) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
-    MemoryCreatePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-memory-create',template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/memory-create/memory-create.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Ajouter un paquet de carte</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="card-background-page" padding>\n  \n  <ion-grid>   \n    <ion-row *ngFor="let card_row of cards">\n      <ion-col class="col-img" *ngFor="let card of card_row">\n        <div class="col-img-background">\n            Ajouter image\n            <img *ngIf="card.src"  class="img" id="img{{card.index}}" src="{{ card.src }}" alt="no card"/>\n            <button class="col-img-btn" (click)="addCard(card.index, cards.indexOf(card_row))"></button>\n        </div>  \n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <button id="btn-addCards" ion-button block (click)="addCards()">Ajouter paquet</button>\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/memory-create/memory-create.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_memory_provider__["a" /* MemoryProvider */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_camera_provider__["a" /* CameraProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_alert_provider__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_6__models_models__["a" /* Models */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_user__["a" /* User */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
-    ], MemoryCreatePage);
-    return MemoryCreatePage;
-}());
-
-//# sourceMappingURL=memory-create.js.map
-
-/***/ }),
-
 /***/ 228:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -692,7 +693,7 @@ var MemoryCreatePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchTictactoePlayersPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_models__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_models__ = __webpack_require__(72);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -782,7 +783,7 @@ var SearchTictactoePlayersPage = (function () {
     };
     SearchTictactoePlayersPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-search-tictactoe-players',template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/search-tictactoe-players/search-tictactoe-players.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>SearchTictactoePlayers</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="goBack()">\n        X\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row *ngFor="let player of players">\n      <ion-col>\n        Nom : {{ player.alias }}\n      </ion-col>\n      <ion-col>\n        <button block (click)="invite(player)">>Inviter</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/search-tictactoe-players/search-tictactoe-players.html"*/,
+            selector: 'page-search-tictactoe-players',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/search-tictactoe-players/search-tictactoe-players.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>SearchTictactoePlayers</ion-title>\n    <ion-buttons left>\n      <button ion-button icon-only (click)="goBack()">\n        X\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row *ngFor="let player of players">\n      <ion-col>\n        Nom : {{ player.alias }}\n      </ion-col>\n      <ion-col>\n        <button block (click)="invite(player)">>Inviter</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/search-tictactoe-players/search-tictactoe-players.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */], __WEBPACK_IMPORTED_MODULE_2__models_models__["a" /* Models */]])
     ], SearchTictactoePlayersPage);
@@ -801,9 +802,9 @@ var SearchTictactoePlayersPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_provider__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_models__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_provider__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_models__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__invitations_invitations__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__search_tictactoe_players_search_tictactoe_players__ = __webpack_require__(228);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1151,7 +1152,7 @@ var TictactoePage = (function () {
     };
     TictactoePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tictactoe',template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/tictactoe/tictactoe.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title text-center>Tic Tac Toe {{ user.alias }}</ion-title>\n\n      <ion-buttons end>\n        <button ion-button icon-only (click)="presentActionSheet()">\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding id="home-content">\n    <ion-grid class="score_buttons-grid">\n      <ion-row>\n        <ion-col class="score-col">\n          Score :\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col class="score_button-col">\n          <div class="score_button">Vous: {{ player.score }}</div>\n        </ion-col>\n        <ion-col class="score_button-col">\n          <div class="score_button">Adversaire: {{ cpu.score }}</div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    \n    <div class="tictactoe-grid">\n      \n      <ion-row id="tictactoe-line-1">\n        <ion-col>\n          <span *ngIf= "items[0].value && items[0].value === \'X\'" class="x">{{ items[0].value }}</span>\n          <span *ngIf= "items[0].value && items[0].value === \'O\'" class="o">{{ items[0].value }}</span>\n          <button id="0" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col class="middle-col">\n            <span *ngIf= "items[1].value && items[1].value === \'X\'" class="x">{{ items[1].value }}</span>\n            <span *ngIf= "items[1].value && items[1].value === \'O\'" class="o">{{ items[1].value }}</span>\n          <button id="1" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col>\n            <span *ngIf= "items[2].value && items[2].value === \'X\'" class="x">{{ items[2].value }}</span>\n            <span *ngIf= "items[2].value && items[2].value === \'O\'" class="o">{{ items[2].value }}</span>\n          <button id="2" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n      </ion-row>\n      \n      \n      <ion-row id="tictactoe-line-2">\n        <ion-col>\n            <span *ngIf= "items[3].value && items[3].value === \'X\'" class="x">{{ items[3].value }}</span>\n            <span *ngIf= "items[3].value && items[3].value === \'O\'" class="o">{{ items[3].value }}</span>\n          <button id="3" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col class="middle-col">\n            <span *ngIf= "items[4].value && items[4].value === \'X\'" class="x">{{ items[4].value }}</span>\n            <span *ngIf= "items[4].value && items[4].value === \'O\'" class="o">{{ items[4].value }}</span>\n          <button id="4" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col>\n            <span *ngIf= "items[5].value && items[5].value === \'X\'" class="x">{{ items[5].value }}</span>\n            <span *ngIf= "items[5].value && items[5].value === \'O\'" class="o">{{ items[5].value }}</span>\n          <button id="5" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n      </ion-row>\n      \n      \n      <ion-row id="tictactoe-line-3">\n        <ion-col>\n            <span *ngIf= "items[6].value && items[6].value === \'X\'" class="x">{{ items[6].value }}</span>\n            <span *ngIf= "items[6].value && items[6].value === \'O\'" class="o">{{ items[6].value }}</span>\n          <button id="6" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col class="middle-col">\n            <span *ngIf= "items[7].value && items[7].value === \'X\'" class="x">{{ items[7].value }}</span>\n            <span *ngIf= "items[7].value && items[7].value === \'O\'" class="o">{{ items[7].value }}</span>\n          <button id="7" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col>\n            <span *ngIf= "items[8].value && items[8].value === \'X\'" class="x">{{ items[8].value }}</span>\n            <span *ngIf= "items[8].value && items[8].value === \'O\'" class="o">{{ items[8].value }}</span>\n          <button id="8" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n      </ion-row>\n    </div>\n    <button *ngIf="currentGame" (click)="cancelGame()">Annuler</button>\n  </ion-content>'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/tictactoe/tictactoe.html"*/
+            selector: 'page-tictactoe',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/tictactoe/tictactoe.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title text-center>Tic Tac Toe {{ user.alias }}</ion-title>\n\n      <ion-buttons end>\n        <button ion-button icon-only (click)="presentActionSheet()">\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding id="home-content">\n    <ion-grid class="score_buttons-grid">\n      <ion-row>\n        <ion-col class="score-col">\n          Score :\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col class="score_button-col">\n          <div class="score_button">Vous: {{ player.score }}</div>\n        </ion-col>\n        <ion-col class="score_button-col">\n          <div class="score_button">Adversaire: {{ cpu.score }}</div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    \n    <div class="tictactoe-grid">\n      \n      <ion-row id="tictactoe-line-1">\n        <ion-col>\n          <span *ngIf= "items[0].value && items[0].value === \'X\'" class="x">{{ items[0].value }}</span>\n          <span *ngIf= "items[0].value && items[0].value === \'O\'" class="o">{{ items[0].value }}</span>\n          <button id="0" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col class="middle-col">\n            <span *ngIf= "items[1].value && items[1].value === \'X\'" class="x">{{ items[1].value }}</span>\n            <span *ngIf= "items[1].value && items[1].value === \'O\'" class="o">{{ items[1].value }}</span>\n          <button id="1" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col>\n            <span *ngIf= "items[2].value && items[2].value === \'X\'" class="x">{{ items[2].value }}</span>\n            <span *ngIf= "items[2].value && items[2].value === \'O\'" class="o">{{ items[2].value }}</span>\n          <button id="2" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n      </ion-row>\n      \n      \n      <ion-row id="tictactoe-line-2">\n        <ion-col>\n            <span *ngIf= "items[3].value && items[3].value === \'X\'" class="x">{{ items[3].value }}</span>\n            <span *ngIf= "items[3].value && items[3].value === \'O\'" class="o">{{ items[3].value }}</span>\n          <button id="3" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col class="middle-col">\n            <span *ngIf= "items[4].value && items[4].value === \'X\'" class="x">{{ items[4].value }}</span>\n            <span *ngIf= "items[4].value && items[4].value === \'O\'" class="o">{{ items[4].value }}</span>\n          <button id="4" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col>\n            <span *ngIf= "items[5].value && items[5].value === \'X\'" class="x">{{ items[5].value }}</span>\n            <span *ngIf= "items[5].value && items[5].value === \'O\'" class="o">{{ items[5].value }}</span>\n          <button id="5" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n      </ion-row>\n      \n      \n      <ion-row id="tictactoe-line-3">\n        <ion-col>\n            <span *ngIf= "items[6].value && items[6].value === \'X\'" class="x">{{ items[6].value }}</span>\n            <span *ngIf= "items[6].value && items[6].value === \'O\'" class="o">{{ items[6].value }}</span>\n          <button id="6" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col class="middle-col">\n            <span *ngIf= "items[7].value && items[7].value === \'X\'" class="x">{{ items[7].value }}</span>\n            <span *ngIf= "items[7].value && items[7].value === \'O\'" class="o">{{ items[7].value }}</span>\n          <button id="7" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n        \n        <ion-col>\n            <span *ngIf= "items[8].value && items[8].value === \'X\'" class="x">{{ items[8].value }}</span>\n            <span *ngIf= "items[8].value && items[8].value === \'O\'" class="o">{{ items[8].value }}</span>\n          <button id="8" class="play-btn" (click)="playSquare($event)"></button>\n        </ion-col>\n      </ion-row>\n    </div>\n    <button *ngIf="currentGame" (click)="cancelGame()">Annuler</button>\n  </ion-content>'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/tictactoe/tictactoe.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -1199,11 +1200,11 @@ var map = {
 		4
 	],
 	"../pages/memory-create/memory-create.module": [
-		699,
+		698,
 		3
 	],
 	"../pages/memory/memory.module": [
-		698,
+		699,
 		2
 	],
 	"../pages/search-tictactoe-players/search-tictactoe-players.module": [
@@ -1231,16 +1232,16 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 358:
+/***/ 336:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CameraProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery__ = __webpack_require__(628);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery__ = __webpack_require__(521);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_models__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_models__ = __webpack_require__(72);
 /*
 import { Platform } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -1331,7 +1332,7 @@ var CameraProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(403);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tictactoe_tictactoe__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__memory_memory__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__memory_memory__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hangman_hangman__ = __webpack_require__(224);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1355,7 +1356,7 @@ var TabsPage = (function () {
         this.tab4Root = __WEBPACK_IMPORTED_MODULE_4__hangman_hangman__["a" /* HangmanPage */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="TicTacToe" ios="ios-grid-outline" tabIcon="grid"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Memory" ios="ios-images" tabIcon="md-images"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Hangman" ios="ios-man" tabIcon="md-man"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/tabs/tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="TicTacToe" ios="ios-grid-outline" tabIcon="grid"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Memory" ios="ios-images" tabIcon="md-images"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="Hangman" ios="ios-man" tabIcon="md-man"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/tabs/tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -1374,7 +1375,7 @@ var TabsPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_provider__ = __webpack_require__(404);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(209);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1414,7 +1415,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title text-center>Accueil</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding id="home-content">\n  <ion-grid class="home-grid">\n    <form>\n      <ion-item>    \n        <ion-input text-center type="text" [(ngModel)]="user.alias" name="name" placeholder="Pseudo"></ion-input>\n      </ion-item>\n      \n      <ion-item>    \n        <ion-input text-center type="text" [(ngModel)]="user.email" name="email" placeholder="Email (juste pour inscription)"></ion-input>\n      </ion-item>\n      \n      <ion-item>\n        <ion-input text-center type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe"></ion-input>\n      </ion-item>\n\n      <button id="btn-signup" ion-button block (click)="signUp()">S\'inscrire</button>\n      <button id="btn-signin" ion-button block (click)="signIn()">Se connecter</button>\n    </form>\n    <p *ngIf="user.id">Connecté en tant que {{ user.alias }} !!</p>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title text-center>Accueil</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding id="home-content">\n  <ion-grid class="home-grid">\n    <form>\n      <ion-item>    \n        <ion-input text-center type="text" [(ngModel)]="user.alias" name="name" placeholder="Pseudo"></ion-input>\n      </ion-item>\n      \n      <ion-item>    \n        <ion-input text-center type="text" [(ngModel)]="user.email" name="email" placeholder="Email (juste pour inscription)"></ion-input>\n      </ion-item>\n      \n      <ion-item>\n        <ion-input text-center type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe"></ion-input>\n      </ion-item>\n\n      <button id="btn-signup" ion-button block (click)="signUp()">S\'inscrire</button>\n      <button id="btn-signin" ion-button block (click)="signIn()">Se connecter</button>\n    </form>\n    <p *ngIf="user.id">Connecté en tant que {{ user.alias }} !!</p>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_login_provider__["a" /* LoginProvider */],
@@ -1437,8 +1438,8 @@ var HomePage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(405);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__alert_provider__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__alert_provider__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user__ = __webpack_require__(74);
 /*import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -1676,24 +1677,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_firestore__ = __webpack_require__(655);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(405);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_storage__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angularfire2_storage__ = __webpack_require__(339);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(400);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__ = __webpack_require__(401);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_camera__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_camera__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tabs_tabs__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_home_home__ = __webpack_require__(403);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tictactoe_tictactoe__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_invitations_invitations__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_search_tictactoe_players_search_tictactoe_players__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_memory_memory__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_memory_create_memory_create__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_user__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_memory_memory__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_memory_create_memory_create__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_user__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_globals__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_alert_provider__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_alert_provider__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_login_provider__ = __webpack_require__(404);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_camera_provider__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__models_models__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_memory_provider__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_camera_provider__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__models_models__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_memory_provider__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_hangman_hangman__ = __webpack_require__(224);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1755,8 +1756,8 @@ var AppModule = (function () {
                     links: [
                         { loadChildren: '../pages/hangman/hangman.module#HangmanPageModule', name: 'HangmanPage', segment: 'hangman', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/invitations/invitations.module#InvitationsPageModule', name: 'InvitationsPage', segment: 'invitations', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/memory/memory.module#MemoryPageModule', name: 'MemoryPage', segment: 'memory', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/memory-create/memory-create.module#MemoryCreatePageModule', name: 'MemoryCreatePage', segment: 'memory-create', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/memory/memory.module#MemoryPageModule', name: 'MemoryPage', segment: 'memory', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/search-tictactoe-players/search-tictactoe-players.module#SearchTictactoePlayersPageModule', name: 'SearchTictactoePlayersPage', segment: 'search-tictactoe-players', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tictactoe/tictactoe.module#TictactoePageModule', name: 'TictactoePage', segment: 'tictactoe', priority: 'low', defaultHistory: [] }
                     ]
@@ -1837,7 +1838,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/math1761/Sites/LePendu/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/math1761/Sites/LePendu/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/nicoto/Dev/LePendu/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/nicoto/Dev/LePendu/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -1852,47 +1853,10 @@ var MyApp = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var User = (function () {
-    function User() {
-    }
-    User.prototype.init = function (id, alias, email, ttt_invitationSent, ttt_invitationsRecieved) {
-        this.id = id;
-        this.alias = alias;
-        this.email = email;
-        this.ttt_invitationSent = ttt_invitationSent;
-        this.ttt_invitationsRecieved = ttt_invitationsRecieved;
-    };
-    User = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], User);
-    return User;
-}());
-
-//# sourceMappingURL=user.js.map
-
-/***/ }),
-
-/***/ 73:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Models; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_storage__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_storage__ = __webpack_require__(339);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2008,7 +1972,44 @@ var Models = (function () {
 
 /***/ }),
 
-/***/ 90:
+/***/ 74:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var User = (function () {
+    function User() {
+    }
+    User.prototype.init = function (id, alias, email, ttt_invitationSent, ttt_invitationsRecieved) {
+        this.id = id;
+        this.alias = alias;
+        this.email = email;
+        this.ttt_invitationSent = ttt_invitationSent;
+        this.ttt_invitationsRecieved = ttt_invitationsRecieved;
+    };
+    User = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], User);
+    return User;
+}());
+
+//# sourceMappingURL=user.js.map
+
+/***/ }),
+
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

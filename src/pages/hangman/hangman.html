@@ -12,7 +12,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
 
     <form (ngSubmit)="addStep()">
@@ -27,8 +26,9 @@
         <img src="../../assets/hangman/hung{{err}}.png" style="max-height:185px;"/>
     </div>
     <div class="test">
-        <span *ngFor="let letter of letters">{{letter}}</span>
-        <span>{{err}}</span>
-        <span>{{try}}</span>
+      Nombres d'erreurs : <span>{{err}}</span><br>
+      Nombres d'essais : <span>{{count}}</span><br>
+      Lettres tentées : <span *ngFor="let letter of letters">{{letter}}, </span><br>
+      Mot : <span *ngFor="let tr of try">{{tr}}</span>
     </div>
 </ion-content>

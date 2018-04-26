@@ -56,10 +56,11 @@ export class HangmanPage {
            this.count++;
            console.log(this.try);
            console.log(this.letters);
-        } else {
+        } else if (this.err === 11){
             console.log("fini !");
             console.log(this.word);
         }
+        this.step = '';
     }
 
 }
