@@ -282,13 +282,13 @@ var HangmanPage = (function () {
                 }
             }
             if (!this.goodPass) {
-                this.err++;
-                this.letters.push(this.step);
+                this.letters.indexOf(this.step) ? this.err++ : this.err;
+                this.letters.indexOf(this.step) ? this.letters.push(this.step) : null;
             }
             else {
                 this.goodPass = false;
             }
-            this.count++;
+            this.letters.indexOf(this.step) ? this.count++ : this.count;
             console.log(this.try);
             console.log(this.letters);
         }
