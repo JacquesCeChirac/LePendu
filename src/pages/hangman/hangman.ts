@@ -18,7 +18,7 @@ export class HangmanPage {
 
     step =  '';
     count =  0;
-    word =  "tatatiti";
+    word =  "";
     try = [];
     letters = [];
     err = 0;
