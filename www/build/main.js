@@ -283,7 +283,7 @@ var HangmanPage = (function () {
             }
             if (!this.goodPass) {
                 this.err++;
-                this.letters.push(this.step);
+                this.letters.indexOf(this.step) ? this.letters.push(this.step) : null;
             }
             else {
                 this.goodPass = false;
