@@ -35,7 +35,8 @@ export class HangmanPage {
 
     // griser valider +11
     public addStep(): void {
-        this.step = this.step.toLowerCase();
+        this.step = this.step.toUpperCase();
+        this.word = this.word.toUpperCase();
         if (this.step.match(/[a-zA-Z]/) && this.err < 11) {
             for (let i = 0; i < this.word.length; i++) {
                 if (this.step == this.word[i]) {
